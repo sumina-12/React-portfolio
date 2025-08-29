@@ -64,13 +64,18 @@ export default function App() {
       <section id="home" className="hero">
         <div className="hero-container">
           <div className="hero-content">
+            <div className="hero-image">
+              <img src="/attached_assets/20250612_134619_1756450641705.jpg" alt="Sumina Shrestha" className="hero-photo" />
+            </div>
             <div className="hero-text">
-              <h1 className="hero-title">Welcome to my portfolio</h1>
+              <h1 className="hero-title">Welcome to My Digital World</h1>
+              <h2 className="hero-subtitle">I'm Sumina Shrestha</h2>
               <p className="hero-description">
-                Hi, I'm Sumina Shrestha. Here you can find my CV and more information about me.
+                A passionate developer and creative mind who loves building amazing digital experiences. 
+                Welcome to my portfolio where you can explore my journey, skills, and projects.
               </p>
               <div className="hero-buttons">
-                <button className="btn btn-primary">Download CV</button>
+                <a href="/cv.pdf" download className="btn btn-primary">Download CV</a>
                 <button className="btn btn-secondary" onClick={() => scrollToSection('contact')}>Contact Me</button>
               </div>
             </div>
@@ -174,6 +179,13 @@ export default function App() {
               <h3>C#</h3>
               <div className="skill-progress">
                 <div className="progress-bar" style={{width: '60%'}}></div>
+              </div>
+            </div>
+            <div className="skill-card">
+              <div className="skill-icon">⚛️</div>
+              <h3>React.js</h3>
+              <div className="skill-progress">
+                <div className="progress-bar" style={{width: '80%'}}></div>
               </div>
             </div>
           </div>
