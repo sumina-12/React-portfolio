@@ -86,10 +86,13 @@ export default function Chatbot() {
       <div className={`chatbot-container ${isOpen ? 'open' : ''}`}>
         <div className="chatbot-header">
           <div className="chatbot-profile">
-            <img src="/attached_assets/20250612_134619_1756450641705.jpg" alt="Sumina's Assistant" />
+            <div className="avatar-container">
+              <img src="/attached_assets/20250612_134619_1756450641705.jpg" alt="Sumina's Assistant" />
+              <div className="status-indicator"></div>
+            </div>
             <div>
-              <h4>Sumina's Assistant</h4>
-              <span className="status">Online</span>
+              <h4>Sumina's AI Assistant</h4>
+              <span className="status">🟢 Online - Ready to help!</span>
             </div>
           </div>
           <button className="chatbot-close" onClick={toggleChatbot}>×</button>
@@ -110,16 +113,18 @@ export default function Chatbot() {
 
         {messages.length <= 1 && (
           <div className="quick-replies">
-            <p>Quick questions:</p>
-            {quickReplies.map((reply, index) => (
-              <button 
-                key={index} 
-                className="quick-reply-btn"
-                onClick={() => handleQuickReply(reply)}
-              >
-                {reply}
-              </button>
-            ))}
+            <p>Popular questions:</p>
+            <div className="quick-replies-grid">
+              {quickReplies.map((reply, index) => (
+                <button 
+                  key={index} 
+                  className="quick-reply-btn"
+                  onClick={() => handleQuickReply(reply)}
+                >
+                  {reply}
+                </button>
+              ))}
+            </div>
           </div>
         )}
 

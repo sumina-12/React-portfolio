@@ -61,11 +61,10 @@ export default function Gallery() {
     <section id="gallery" className="gallery-section">
       <div className="container">
         <div className="gallery-header">
-          <span className="gallery-subtitle">✨ Capturing Life's Beautiful Moments</span>
-          <h2 className="gallery-title">My Gallery</h2>
+          <span className="gallery-subtitle">Personal Moments</span>
+          <h2 className="gallery-title">Gallery</h2>
           <p className="gallery-description">
-            A curated collection of my favorite memories, celebrations, and cherished moments 
-            that tell the story of my journey.
+            A collection of my favorite memories and special moments.
           </p>
         </div>
         
