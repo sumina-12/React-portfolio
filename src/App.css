@@ -6,10 +6,11 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: #374151;
   overflow-x: hidden;
+  background: #fdf2f8;
 }
 
 html {
@@ -18,19 +19,21 @@ html {
 
 .portfolio {
   min-height: 100vh;
+  background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 50%, #f3e8ff 100%);
 }
 
-/* Navigation */
+/* Navigation - Feminine Design */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
   background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
   z-index: 1000;
-  padding: 1rem 0;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  padding: 1.2rem 0;
+  box-shadow: 0 4px 30px rgba(236, 72, 153, 0.1);
   transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(236, 72, 153, 0.1);
 }
 
 .nav-container {
@@ -43,10 +46,14 @@ html {
 }
 
 .nav-logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #6c63ff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #ec4899, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   cursor: pointer;
+  letter-spacing: -0.5px;
 }
 
 .nav-menu {
@@ -65,7 +72,7 @@ html {
 }
 
 .nav-link:hover {
-  color: #6c63ff;
+  color: #ec4899;
   transform: translateY(-2px);
 }
 
@@ -76,7 +83,7 @@ html {
   height: 2px;
   bottom: -5px;
   left: 50%;
-  background-color: #6c63ff;
+  background: linear-gradient(45deg, #ec4899, #f472b6);
   transition: all 0.3s ease;
   transform: translateX(-50%);
 }
@@ -102,13 +109,13 @@ html {
   border-radius: 2px;
 }
 
-/* Hero Section */
+/* Hero Section - Feminine Design */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 30%, #f8fafc 70%, #fdf2f8 100%);
   display: flex;
   align-items: center;
-  padding-top: 80px;
+  padding-top: 100px;
   position: relative;
   overflow: hidden;
 }
@@ -116,13 +123,25 @@ html {
 .hero::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:%23ffffff;stop-opacity:0.1"/><stop offset="100%" style="stop-color:%23ffffff;stop-opacity:0"/></radialGradient></defs><circle cx="500" cy="500" r="500" fill="url(%23a)"/></svg>');
-  opacity: 0.3;
-  animation: float 6s ease-in-out infinite;
+  top: 10%;
+  right: 10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, rgba(219, 39, 119, 0.05) 50%, transparent 100%);
+  border-radius: 50%;
+  animation: float 8s ease-in-out infinite;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 20%;
+  left: 5%;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, rgba(147, 51, 234, 0.04) 50%, transparent 100%);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite reverse;
 }
 
 @keyframes float {
@@ -144,8 +163,10 @@ html {
   grid-template-columns: 1fr 2fr;
   gap: 4rem;
   align-items: center;
-  color: white;
+  color: #374151;
   animation: fadeInUp 1s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-image {
@@ -154,14 +175,34 @@ html {
 }
 
 .hero-photo {
-  width: 280px;
-  height: 280px;
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  border: 4px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 25px 50px rgba(236, 72, 153, 0.15);
+  border: 6px solid rgba(255, 255, 255, 0.8);
   animation: zoomIn 1s ease, float 6s ease-in-out infinite;
   transition: transform 0.3s ease;
+  position: relative;
+}
+
+.hero-photo::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(45deg, #ec4899, #f472b6, #a855f7, #ec4899);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.1;
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .hero-photo:hover {
@@ -184,20 +225,25 @@ html {
 }
 
 .hero-title {
-  font-size: 3.5rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-size: 3.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #1f2937, #374151);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   animation: slideInFromRight 1s ease 0.3s both;
+  line-height: 1.2;
+  letter-spacing: -1px;
 }
 
 .hero-subtitle {
-  font-size: 2rem;
-  font-weight: 300;
-  margin-bottom: 1rem;
-  color: rgba(255, 255, 255, 0.9);
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  font-size: 2.2rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  color: #ec4899;
   animation: slideInFromRight 1s ease 0.5s both;
+  font-style: italic;
 }
 
 @keyframes slideInFromLeft {
@@ -212,13 +258,12 @@ html {
 }
 
 .hero-description {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  opacity: 0.9;
+  font-size: 1.3rem;
+  margin-bottom: 2.5rem;
+  max-width: 650px;
+  color: #6b7280;
   animation: slideInFromRight 1s ease 0.6s both;
+  line-height: 1.7;
 }
 
 @keyframes slideInFromRight {
@@ -275,39 +320,43 @@ html {
 }
 
 .btn-primary {
-  background: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(45deg, #ec4899, #f472b6);
   color: white;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  border: 2px solid transparent;
   backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px rgba(236, 72, 153, 0.3);
 }
 
 .btn-primary:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: linear-gradient(45deg, #db2777, #ec4899);
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 30px rgba(236, 72, 153, 0.4);
 }
 
 .btn-secondary {
-  background: transparent;
-  color: white;
-  border: 2px solid white;
+  background: rgba(255, 255, 255, 0.9);
+  color: #ec4899;
+  border: 2px solid #ec4899;
+  backdrop-filter: blur(10px);
 }
 
 .btn-secondary:hover {
-  background: white;
-  color: #6c63ff;
+  background: #ec4899;
+  color: white;
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 30px rgba(236, 72, 153, 0.3);
 }
 
-/* Sections */
+/* Sections - Feminine Design */
 .section {
-  padding: 5rem 0;
+  padding: 6rem 0;
   position: relative;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
 }
 
 .section:nth-child(even) {
-  background: #f8f9fa;
+  background: linear-gradient(135deg, rgba(253, 242, 248, 0.8) 0%, rgba(252, 231, 243, 0.6) 100%);
 }
 
 .container {
@@ -317,23 +366,28 @@ html {
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
   text-align: center;
-  margin-bottom: 3rem;
-  color: #333;
+  margin-bottom: 3.5rem;
+  background: linear-gradient(45deg, #1f2937, #374151);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   position: relative;
   animation: fadeInUp 0.8s ease;
+  font-weight: 700;
+  letter-spacing: -1px;
 }
 
 .section-title::after {
   content: '';
   position: absolute;
-  bottom: -10px;
+  bottom: -15px;
   left: 50%;
   transform: translateX(-50%);
-  width: 100px;
-  height: 3px;
-  background: linear-gradient(45deg, #6c63ff, #667eea);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(45deg, #ec4899, #f472b6);
   border-radius: 2px;
 }
 
@@ -386,7 +440,8 @@ html {
 }
 
 .about-details strong {
-  color: #6c63ff;
+  color: #ec4899;
+  font-weight: 600;
 }
 
 .about-description {
@@ -405,15 +460,17 @@ html {
 }
 
 .skill-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2.5rem;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(236, 72, 153, 0.1);
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
   animation: slideInFromBottom 0.8s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
 }
 
 @keyframes slideInFromBottom {
@@ -443,8 +500,8 @@ html {
 }
 
 .skill-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(108, 99, 255, 0.2);
+  transform: translateY(-15px) rotate(2deg);
+  box-shadow: 0 25px 50px rgba(236, 72, 153, 0.2);
 }
 
 .skill-icon {
@@ -453,9 +510,10 @@ html {
 }
 
 .skill-card h3 {
-  color: #6c63ff;
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
+  color: #ec4899;
+  margin-bottom: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 
 .skill-progress {
@@ -469,7 +527,7 @@ html {
 
 .progress-bar {
   height: 100%;
-  background: linear-gradient(45deg, #6c63ff, #667eea);
+  background: linear-gradient(45deg, #ec4899, #f472b6);
   border-radius: 10px;
   transition: width 2s ease;
   position: relative;
@@ -500,25 +558,45 @@ html {
 }
 
 .project-card {
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(236, 72, 153, 0.1);
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
   animation: slideInFromBottom 0.8s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-15px) rotate(1deg);
+  box-shadow: 0 25px 50px rgba(236, 72, 153, 0.2);
 }
 
 .project-image {
-  height: 200px;
-  background: linear-gradient(45deg, #6c63ff, #667eea);
+  height: 220px;
+  background: linear-gradient(45deg, #ec4899, #f472b6, #a855f7);
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.project-card:hover .project-image::before {
+  transform: translateX(100%);
 }
 
 .placeholder-image {
@@ -532,9 +610,10 @@ html {
 }
 
 .project-content h3 {
-  color: #6c63ff;
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
+  color: #ec4899;
+  margin-bottom: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 
 .project-content p {
@@ -549,18 +628,21 @@ html {
 }
 
 .project-link {
-  padding: 0.5rem 1rem;
-  background: #6c63ff;
+  padding: 0.7rem 1.5rem;
+  background: linear-gradient(45deg, #ec4899, #f472b6);
   color: white;
   text-decoration: none;
-  border-radius: 25px;
+  border-radius: 30px;
   font-size: 0.9rem;
+  font-weight: 500;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
 }
 
 .project-link:hover {
-  background: #5753d9;
-  transform: translateY(-2px);
+  background: linear-gradient(45deg, #db2777, #ec4899);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(236, 72, 153, 0.4);
 }
 
 /* Contact Section */
@@ -632,11 +714,13 @@ html {
 }
 
 .contact-form {
-  background: white;
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2.5rem;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(236, 72, 153, 0.1);
   animation: slideInFromRight 1s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
 }
 
 .form-group {
@@ -657,20 +741,23 @@ html {
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #6c63ff;
+  border-color: #ec4899;
   background: white;
-  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1);
 }
 
 .contact-form .btn {
   width: 100%;
-  background: linear-gradient(45deg, #6c63ff, #667eea);
+  background: linear-gradient(45deg, #ec4899, #f472b6);
   color: white;
   border: none;
+  font-weight: 600;
+  box-shadow: 0 8px 25px rgba(236, 72, 153, 0.3);
 }
 
 .contact-form .btn:hover {
-  background: linear-gradient(45deg, #5753d9, #5a67d8);
+  background: linear-gradient(45deg, #db2777, #ec4899);
+  box-shadow: 0 12px 30px rgba(236, 72, 153, 0.4);
 }
 
 /* Responsive Design */
@@ -1091,23 +1178,24 @@ html {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(45deg, #6c63ff, #667eea);
+  width: 65px;
+  height: 65px;
+  background: linear-gradient(45deg, #ec4899, #f472b6);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 1500;
-  box-shadow: 0 4px 20px rgba(108, 99, 255, 0.4);
+  box-shadow: 0 6px 25px rgba(236, 72, 153, 0.4);
   transition: all 0.3s ease;
   animation: float 3s ease-in-out infinite;
+  border: 3px solid rgba(255, 255, 255, 0.8);
 }
 
 .chatbot-toggle:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 25px rgba(108, 99, 255, 0.6);
+  box-shadow: 0 8px 30px rgba(236, 72, 153, 0.6);
 }
 
 .chatbot-toggle.active {
@@ -1144,9 +1232,9 @@ html {
 }
 
 .chatbot-header {
-  background: linear-gradient(45deg, #6c63ff, #667eea);
+  background: linear-gradient(45deg, #ec4899, #f472b6);
   color: white;
-  padding: 1rem;
+  padding: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1223,7 +1311,7 @@ html {
 }
 
 .message.user .message-bubble {
-  background: linear-gradient(45deg, #6c63ff, #667eea);
+  background: linear-gradient(45deg, #ec4899, #f472b6);
   color: white;
   border-bottom-right-radius: 5px;
 }
@@ -1274,9 +1362,9 @@ html {
 }
 
 .quick-reply-btn:hover {
-  background: #6c63ff;
+  background: #ec4899;
   color: white;
-  border-color: #6c63ff;
+  border-color: #ec4899;
 }
 
 .chatbot-input {
@@ -1296,21 +1384,22 @@ html {
 }
 
 .chatbot-input input:focus {
-  border-color: #6c63ff;
-  box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.1);
+  border-color: #ec4899;
+  box-shadow: 0 0 0 2px rgba(236, 72, 153, 0.1);
 }
 
 .send-btn {
-  background: linear-gradient(45deg, #6c63ff, #667eea);
+  background: linear-gradient(45deg, #ec4899, #f472b6);
   border: none;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
 }
 
 .send-btn:hover {
