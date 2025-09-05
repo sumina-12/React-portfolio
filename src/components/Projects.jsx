@@ -8,9 +8,9 @@ export default function Projects() {
     },
     {
       title: 'Mobile App UI',
-      description: 'User interface design for a mobile application using Figma.',
+      description: 'A comprehensive mobile application UI/UX design created in Figma, featuring modern design principles, intuitive user flows, and responsive layouts for optimal mobile experience.',
       icon: '📱',
-      links: { project: '#', design: '#' }
+      links: { project: 'https://www.figma.com/design/wYA2yk2NQ2BYSDIGGHhBXR/Untitled?node-id=0-1&p=f&t=q3VHyq1HbwDT92bZ-0', design: 'https://www.figma.com/design/wYA2yk2NQ2BYSDIGGHhBXR/Untitled?node-id=0-1&p=f&t=q3VHyq1HbwDT92bZ-0' }
     },
     {
       title: 'E-commerce Site',
