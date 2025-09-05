@@ -4,7 +4,7 @@ export default function Projects() {
       title: 'Portfolio Website',
       description: 'A responsive personal portfolio website built with modern web technologies featuring React, CSS animations, and interactive components.',
       icon: '🌐',
-      links: { project: 'file:///D:/Website%20(1)/Website/index.html', github: 'https://github.com/sumina-12/portfolio1/tree/main/Website' }
+      links: { project: 'https://sumina-12.github.io/portfolio1/', github: 'https://github.com/sumina-12/portfolio1/tree/main/Website' }
     },
     {
       title: 'Mobile App UI',
