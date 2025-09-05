@@ -20,7 +20,6 @@ export default function Header() {
       <div className="nav-container">
         <div className="nav-logo">
           <img src="/attached_assets/portfolio-logo_1757078956553.jpg" alt="Sumina Portfolio Logo" className="logo-image" />
-          <h1 className="logo-text">Sumina Shrestha</h1>
         </div>
         
         <button className="nav-toggle" onClick={toggleMenu}>

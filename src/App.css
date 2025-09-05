@@ -782,6 +782,18 @@ html {
   font-size: 1rem;
 }
 
+.contact-link {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: block;
+}
+
+.contact-link:hover {
+  color: #ec4899;
+  text-decoration: underline;
+}
+
 .social-links {
   margin-top: 2rem;
 }
@@ -1645,7 +1657,7 @@ html {
 /* Enhanced Responsive Design for Gallery */
 @media screen and (max-width: 1200px) {
   .gallery-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 1.5rem;
   }
   
@@ -1656,8 +1668,18 @@ html {
 
 @media screen and (max-width: 768px) {
   .gallery-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.2rem;
+  }
+  
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
   }
   
   .gallery-title {
@@ -1702,7 +1724,17 @@ html {
 @media screen and (max-width: 480px) {
   .gallery-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 0.8rem;
+    gap: 1rem;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .contact-icon {
+    margin-bottom: 0.5rem;
   }
   
   .gallery-title {
