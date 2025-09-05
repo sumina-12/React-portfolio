@@ -10,7 +10,7 @@ export default function Projects() {
       title: 'Mobile App UI',
       description: 'A comprehensive mobile application UI/UX design created in Figma, featuring modern design principles, intuitive user flows, and responsive layouts for optimal mobile experience.',
       icon: '📱',
-      links: { project: 'https://www.figma.com/design/wYA2yk2NQ2BYSDIGGHhBXR/Untitled?node-id=0-1&p=f&t=q3VHyq1HbwDT92bZ-0', design: 'https://www.figma.com/design/wYA2yk2NQ2BYSDIGGHhBXR/Untitled?node-id=0-1&p=f&t=q3VHyq1HbwDT92bZ-0' }
+      links: { project: 'https://www.figma.com/proto/wYA2yk2NQ2BYSDIGGHhBXR/Untitled?node-id=0-1&t=q3VHyq1HbwDT92bZ-1', design: 'https://www.figma.com/design/wYA2yk2NQ2BYSDIGGHhBXR/Untitled?node-id=0-1&t=q3VHyq1HbwDT92bZ-1' }
     },
     {
       title: 'E-commerce Site',
@@ -40,8 +40,8 @@ export default function Projects() {
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <div className="project-links">
-                  <a href={project.links.project} className="project-link">View Project</a>
-                  <a href={project.links.github || project.links.design} className="project-link">
+                  <a href={project.links.project} className="project-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                  <a href={project.links.github || project.links.design} className="project-link" target="_blank" rel="noopener noreferrer">
                     {project.links.github ? 'GitHub' : 'Design'}
                   </a>
                 </div>
