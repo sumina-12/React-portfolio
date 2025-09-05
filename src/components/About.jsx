@@ -7,7 +7,7 @@ export default function About() {
             <img src="/attached_assets/20250612_134619_1756450641705.jpg" alt="Sumina Shrestha" className="profile-photo" />
           </div>
           <div className="about-text">
-            <h2 className="section-title">Hello everyone, I'm a Developer</h2>
+            <h2 className="section-title">About Me</h2>
             <div className="about-details">
               <p><strong>Name:</strong> Sumina Shrestha</p>
               <p><strong>Qualification:</strong> 10 SEE pass with GPA 3.17</p>

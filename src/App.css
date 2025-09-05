@@ -46,14 +46,34 @@ html {
 }
 
 .nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+}
+
+.logo-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.logo-image:hover {
+  transform: scale(1.1);
+}
+
+.logo-text {
   font-size: 1.8rem;
   font-weight: 700;
   background: linear-gradient(45deg, #ec4899, #f472b6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  cursor: pointer;
   letter-spacing: -0.5px;
+  margin: 0;
 }
 
 .nav-menu {
@@ -240,10 +260,35 @@ html {
 .hero-subtitle {
   font-size: 2.2rem;
   font-weight: 400;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   color: #ec4899;
   animation: slideInFromRight 1s ease 0.5s both;
   font-style: italic;
+}
+
+.hero-badges {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  animation: slideInFromRight 1s ease 0.7s both;
+}
+
+.badge {
+  background: linear-gradient(45deg, #ec4899, #f472b6);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 8px 25px rgba(236, 72, 153, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(236, 72, 153, 0.4);
 }
 
 @keyframes slideInFromLeft {
@@ -406,12 +451,13 @@ html {
 
 .profile-photo {
   width: 300px;
-  height: 300px;
-  border-radius: 50%;
+  height: 350px;
+  border-radius: 20px;
   object-fit: cover;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 40px rgba(236, 72, 153, 0.3);
   animation: zoomIn 1s ease, float 6s ease-in-out infinite;
   transition: transform 0.3s ease;
+  border: 4px solid rgba(255, 255, 255, 0.9);
 }
 
 .profile-photo:hover {
@@ -1222,6 +1268,35 @@ html {
   transition: all 0.3s ease;
   animation: float 3s ease-in-out infinite;
   border: 3px solid rgba(255, 255, 255, 0.8);
+  position: relative;
+  overflow: visible;
+}
+
+.chatbot-pulse {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border: 2px solid #ec4899;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
 }
 
 .chatbot-toggle:hover {
@@ -1422,15 +1497,15 @@ html {
 .send-btn {
   background: linear-gradient(45deg, #ec4899, #f472b6);
   border: none;
-  border-radius: 50%;
-  width: 42px;
-  height: 42px;
+  border-radius: 25px;
+  padding: 0.8rem 1.2rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
+  min-width: 80px;
 }
 
 .send-btn:hover {

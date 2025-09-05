@@ -78,7 +78,8 @@ export default function Chatbot() {
     <>
       {/* Chatbot Toggle Button */}
       <div className={`chatbot-toggle ${isOpen ? 'active' : ''}`} onClick={toggleChatbot}>
-        <span className="chatbot-icon">{isOpen ? '×' : '💬'}</span>
+        <span className="chatbot-icon">{isOpen ? '×' : '🤖'}</span>
+        <div className="chatbot-pulse"></div>
       </div>
 
       {/* Chatbot Window */}
@@ -131,7 +132,7 @@ export default function Chatbot() {
             placeholder="Type your message..."
           />
           <button onClick={handleSendMessage} className="send-btn">
-            <span>📤</span>
+            <span>✨ Send</span>
           </button>
         </div>
       </div>

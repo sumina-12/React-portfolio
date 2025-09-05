@@ -18,7 +18,10 @@ export default function Header() {
   return (
     <nav className="navbar">
       <div className="nav-container">
-        <h1 className="nav-logo">Sumina Shrestha</h1>
+        <div className="nav-logo">
+          <img src="/attached_assets/portfolio-logo_1757078956553.jpg" alt="Sumina Portfolio Logo" className="logo-image" />
+          <h1 className="logo-text">Sumina Shrestha</h1>
+        </div>
         
         <button className="nav-toggle" onClick={toggleMenu}>
           <span></span>

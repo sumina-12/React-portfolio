@@ -41,12 +41,6 @@ export default function Gallery() {
       category: 'lifestyle',
       title: 'Street Style'
     },
-    {
-      src: '/attached_assets/20250612_132937_1757076926801.jpg',
-      alt: 'Traditional architecture visit',
-      category: 'lifestyle',
-      title: 'Architectural Beauty'
-    }
   ]
 
   const categories = ['all', 'portraits', 'celebrations', 'lifestyle']
