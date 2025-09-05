@@ -2,44 +2,58 @@ import { useState } from 'react'
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null)
+  const [activeCategory, setActiveCategory] = useState('all')
 
   const galleryImages = [
     {
       src: '/attached_assets/IMG-3d3ad4ef2a21f5794ae5b6ddb21c520b-V~2_1757076910840.jpg',
       alt: 'Beautiful moment in pink saree',
-      category: 'portrait'
+      category: 'portraits',
+      title: 'Elegance in Pink'
     },
     {
       src: '/attached_assets/PXL_20250802_161841987_1757076910844.jpg',
       alt: 'Cultural celebration with children',
-      category: 'event'
+      category: 'celebrations',
+      title: 'Cultural Joy'
     },
     {
       src: '/attached_assets/PXL_20250802_164540416_1757076910848.jpg',
       alt: 'Birthday celebration with family',
-      category: 'celebration'
+      category: 'celebrations',
+      title: 'Birthday Memories'
     },
     {
       src: '/attached_assets/Snapchat-530487511_1757076910851.jpg',
       alt: 'Evening portrait in traditional attire',
-      category: 'portrait'
+      category: 'portraits',
+      title: 'Evening Grace'
     },
     {
       src: '/attached_assets/IMG-42f65bcbbf7815b5610fae9a50aa40d8-V_1757076926794.jpg',
       alt: 'Elegant setting with flowers',
-      category: 'portrait'
+      category: 'portraits',
+      title: 'Floral Elegance'
     },
     {
       src: '/attached_assets/IMG-9a746ba7be48417f820ce34c117c8cf8-V (1)_1757076926798.jpg',
       alt: 'Street photography moment',
-      category: 'lifestyle'
+      category: 'lifestyle',
+      title: 'Street Style'
     },
     {
       src: '/attached_assets/20250612_132937_1757076926801.jpg',
       alt: 'Traditional architecture visit',
-      category: 'travel'
+      category: 'lifestyle',
+      title: 'Architectural Beauty'
     }
   ]
+
+  const categories = ['all', 'portraits', 'celebrations', 'lifestyle']
+
+  const filteredImages = activeCategory === 'all' 
+    ? galleryImages 
+    : galleryImages.filter(img => img.category === activeCategory)
 
   const openLightbox = (image) => {
     setSelectedImage(image)
@@ -50,23 +64,43 @@ export default function Gallery() {
   }
 
   return (
-    <section id="gallery" className="section">
+    <section id="gallery" className="gallery-section">
       <div className="container">
-        <h2 className="section-title">My Gallery</h2>
-        <p className="gallery-subtitle">A collection of my favorite moments and memories</p>
+        <div className="gallery-header">
+          <span className="gallery-subtitle">✨ Capturing Life's Beautiful Moments</span>
+          <h2 className="gallery-title">My Gallery</h2>
+          <p className="gallery-description">
+            A curated collection of my favorite memories, celebrations, and cherished moments 
+            that tell the story of my journey.
+          </p>
+        </div>
         
+        <div className="gallery-filters">
+          {categories.map((category) => (
+            <button 
+              key={category}
+              className={`filter-btn ${activeCategory === category ? 'active' : ''}`}
+              onClick={() => setActiveCategory(category)}
+            >
+              {category.charAt(0).toUpperCase() + category.slice(1)}
+            </button>
+          ))}
+        </div>
+
         <div className="gallery-grid">
-          {galleryImages.map((image, index) => (
+          {filteredImages.map((image, index) => (
             <div 
               key={index} 
-              className="gallery-item"
+              className="gallery-card"
               onClick={() => openLightbox(image)}
             >
-              <img src={image.src} alt={image.alt} />
-              <div className="gallery-overlay">
-                <div className="gallery-overlay-content">
-                  <span className="gallery-category">{image.category}</span>
-                  <p className="gallery-caption">{image.alt}</p>
+              <div className="image-container">
+                <img src={image.src} alt={image.alt} />
+                <div className="image-overlay">
+                  <div className="overlay-content">
+                    <h4>{image.title}</h4>
+                    <span className="category-tag">{image.category}</span>
+                  </div>
                 </div>
               </div>
             </div>
