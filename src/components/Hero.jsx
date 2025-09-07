@@ -1,9 +1,22 @@
+import { useState } from 'react'
+import CVModal from './CVModal'
+
 export default function Hero() {
+  const [isCVModalOpen, setIsCVModalOpen] = useState(false)
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
     }
+  }
+
+  const openCVModal = () => {
+    setIsCVModalOpen(true)
+  }
+
+  const closeCVModal = () => {
+    setIsCVModalOpen(false)
   }
 
   return (
@@ -20,12 +33,13 @@ export default function Hero() {
               I'm focused on creating clean, user-friendly digital experiences. I help brands turn complex problems into elegant solutions through design and code. Check out some of my recent work below or get in touch to collaborate.
             </p>
             <div className="hero-buttons">
-              <a href="/cv.pdf" download className="btn btn-primary">Download CV</a>
+              <button className="btn btn-primary" onClick={openCVModal}>View My CV</button>
               <button className="btn btn-secondary" onClick={() => scrollToSection('contact')}>Contact Me</button>
             </div>
           </div>
         </div>
       </div>
+      <CVModal isOpen={isCVModalOpen} onClose={closeCVModal} />
     </section>
   )
 }

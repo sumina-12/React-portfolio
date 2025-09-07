@@ -4,7 +4,7 @@ export default function Projects() {
       title: 'Portfolio Website',
       description: 'A responsive personal portfolio website built with modern web technologies featuring React, CSS animations, and interactive components.',
       icon: '🌐',
-      links: { project: 'https://sumina-12.github.io/portfolio1/', github: 'https://github.com/sumina-12/portfolio1/tree/main/Website' }
+      links: { project: 'https://sumina-portfolio.netlify.app/', github: 'https://github.com/sumina-12/portfolio1/tree/main/Website' }
     },
     {
       title: 'Mobile App UI',
@@ -19,10 +19,10 @@ export default function Projects() {
       links: { project: '#', github: '#' }
     },
     {
-      title: 'Game Development',
-      description: 'A simple game developed using C++ with interactive gameplay features.',
-      icon: '🎮',
-      links: { project: '#', github: '#' }
+      title: 'Calculator',
+      description: 'A simple calculator application with a clean interface and basic mathematical operations.',
+      icon: '🧮',
+      links: { project: 'https://simpleee-calculator1.netlify.app/', github: 'https://github.com/sumina-12/Calculator' }
     }
   ]
 

@@ -7,6 +7,7 @@ import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Gallery from './components/Gallery'
 import Contact from './components/Contact'
+import Footer from './components/Footer'
 import Chatbot from './components/Chatbot'
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
       <Projects />
       <Gallery />
       <Contact />
+      <Footer />
       <Chatbot />
     </div>
   )
