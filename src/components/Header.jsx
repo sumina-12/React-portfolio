@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import ThemeToggle from './ThemeToggle'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -74,6 +75,8 @@ export default function Header() {
             <a href="#contact" className="nav-link" onClick={(e) => handleNavClick(e, 'contact')}>Contact Me</a>
           </li>
         </ul>
+        
+        <ThemeToggle />
       </div>
     </nav>
   )

@@ -5,12 +5,43 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg-primary: #fdf2f8;
+  --bg-secondary: #fce7f3;
+  --bg-tertiary: #f3e8ff;
+  --bg-gradient: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 50%, #f3e8ff 100%);
+  --bg-hero: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 30%, #f8fafc 70%, #fdf2f8 100%);
+  --text-primary: #374151;
+  --text-secondary: #1f2937;
+  --text-muted: #6b7280;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --navbar-bg: rgba(255, 255, 255, 0.95);
+  --section-bg: rgba(255, 255, 255, 0.6);
+  --section-alt-bg: linear-gradient(135deg, rgba(253, 242, 248, 0.8) 0%, rgba(252, 231, 243, 0.6) 100%);
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0f0f0f;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #2a1a2a;
+  --bg-gradient: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #2a1a2a 100%);
+  --bg-hero: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 30%, #151515 70%, #0f0f0f 100%);
+  --text-primary: #e5e7eb;
+  --text-secondary: #f9fafb;
+  --text-muted: #9ca3af;
+  --card-bg: rgba(26, 26, 26, 0.9);
+  --navbar-bg: rgba(15, 15, 15, 0.95);
+  --section-bg: rgba(26, 26, 26, 0.6);
+  --section-alt-bg: linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(42, 26, 42, 0.6) 100%);
+}
+
 body {
   font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  color: #374151;
+  color: var(--text-primary);
   overflow-x: hidden;
-  background: #fdf2f8;
+  background: var(--bg-primary);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 html {
@@ -19,7 +50,8 @@ html {
 
 .portfolio {
   min-height: 100vh;
-  background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 50%, #f3e8ff 100%);
+  background: var(--bg-gradient);
+  transition: background 0.3s ease;
 }
 
 /* Navigation - Feminine Design */
@@ -27,7 +59,7 @@ html {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--navbar-bg);
   backdrop-filter: blur(20px);
   z-index: 1000;
   padding: 1.2rem 0;
@@ -84,7 +116,7 @@ html {
 
 .nav-link {
   text-decoration: none;
-  color: #666;
+  color: var(--text-muted);
   font-weight: 500;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -186,21 +218,53 @@ html {
 .nav-toggle span {
   width: 25px;
   height: 3px;
-  background: #333;
+  background: var(--text-secondary);
   margin: 3px 0;
   transition: 0.3s;
   border-radius: 2px;
 }
 
+/* Theme Toggle Button */
+.theme-toggle {
+  background: rgba(236, 72, 153, 0.1);
+  border: 2px solid #ec4899;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 1rem;
+  color: #ec4899;
+}
+
+.theme-toggle:hover {
+  background: #ec4899;
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
+}
+
+.theme-toggle svg {
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover svg {
+  transform: rotate(20deg);
+}
+
 /* Hero Section - Feminine Design */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 30%, #f8fafc 70%, #fdf2f8 100%);
+  background: var(--bg-hero);
   display: flex;
   align-items: center;
   padding-top: 100px;
   position: relative;
   overflow: hidden;
+  transition: background 0.3s ease;
 }
 
 .hero::before {
@@ -246,7 +310,7 @@ html {
   grid-template-columns: 1fr 2fr;
   gap: 4rem;
   align-items: center;
-  color: #374151;
+  color: var(--text-primary);
   animation: fadeInUp 1s ease;
   position: relative;
   z-index: 1;
@@ -311,10 +375,7 @@ html {
   font-size: 3.8rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  background: linear-gradient(45deg, #1f2937, #374151);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-secondary);
   animation: slideInFromRight 1s ease 0.3s both;
   line-height: 1.2;
   letter-spacing: -1px;
@@ -369,7 +430,7 @@ html {
   font-size: 1.3rem;
   margin-bottom: 2.5rem;
   max-width: 650px;
-  color: #6b7280;
+  color: var(--text-muted);
   animation: slideInFromRight 1s ease 0.6s both;
   line-height: 1.7;
 }
@@ -459,12 +520,13 @@ html {
 .section {
   padding: 6rem 0;
   position: relative;
-  background: rgba(255, 255, 255, 0.6);
+  background: var(--section-bg);
   backdrop-filter: blur(10px);
+  transition: background 0.3s ease;
 }
 
 .section:nth-child(even) {
-  background: linear-gradient(135deg, rgba(253, 242, 248, 0.8) 0%, rgba(252, 231, 243, 0.6) 100%);
+  background: var(--section-alt-bg);
 }
 
 .container {
@@ -477,10 +539,7 @@ html {
   font-size: 3rem;
   text-align: center;
   margin-bottom: 3.5rem;
-  background: linear-gradient(45deg, #1f2937, #374151);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-secondary);
   position: relative;
   animation: fadeInUp 0.8s ease;
   font-weight: 700;
@@ -545,7 +604,7 @@ html {
 .about-details p {
   margin-bottom: 1rem;
   font-size: 1.1rem;
-  color: #666;
+  color: var(--text-muted);
 }
 
 .about-details strong {
@@ -556,7 +615,7 @@ html {
 .about-description {
   margin-top: 2rem;
   font-style: italic;
-  color: #555;
+  color: var(--text-muted);
   line-height: 1.8;
 }
 
@@ -569,7 +628,7 @@ html {
 }
 
 .skill-card {
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--card-bg);
   padding: 2.5rem;
   border-radius: 25px;
   box-shadow: 0 15px 40px rgba(236, 72, 153, 0.1);
@@ -578,7 +637,7 @@ html {
   position: relative;
   overflow: hidden;
   animation: slideInFromBottom 0.8s ease;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
 }
 
@@ -682,13 +741,13 @@ html {
 }
 
 .project-card {
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--card-bg);
   border-radius: 25px;
   box-shadow: 0 15px 40px rgba(236, 72, 153, 0.1);
   overflow: hidden;
   transition: all 0.4s ease;
   animation: slideInFromBottom 0.8s ease;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
 }
 
@@ -741,7 +800,7 @@ html {
 }
 
 .project-content p {
-  color: #666;
+  color: var(--text-muted);
   margin-bottom: 1.5rem;
   line-height: 1.6;
 }
@@ -773,7 +832,7 @@ html {
 .contact-intro {
   text-align: center;
   font-size: 1.2rem;
-  color: #666;
+  color: var(--text-muted);
   margin-bottom: 3rem;
   max-width: 600px;
   margin-left: auto;
@@ -810,7 +869,7 @@ html {
   gap: 1rem;
   margin-bottom: 2rem;
   padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--card-bg);
   border-radius: 15px;
   box-shadow: 0 8px 25px rgba(236, 72, 153, 0.1);
   transition: transform 0.3s ease;
@@ -834,19 +893,19 @@ html {
 
 .contact-text h4 {
   margin: 0 0 0.5rem 0;
-  color: #333;
+  color: var(--text-secondary);
   font-size: 1.1rem;
   font-weight: 600;
 }
 
 .contact-text p {
   margin: 0;
-  color: #666;
+  color: var(--text-muted);
   font-size: 1rem;
 }
 
 .contact-link {
-  color: #666;
+  color: var(--text-muted);
   text-decoration: none;
   transition: color 0.3s ease;
   display: block;
@@ -863,7 +922,7 @@ html {
 
 .social-links h4 {
   margin-bottom: 1rem;
-  color: #333;
+  color: var(--text-secondary);
   font-size: 1.1rem;
   font-weight: 600;
 }
@@ -920,18 +979,18 @@ html {
 }
 
 .contact-form {
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--card-bg);
   padding: 2.5rem;
   border-radius: 25px;
   box-shadow: 0 15px 40px rgba(236, 72, 153, 0.1);
   animation: slideInFromRight 1s ease;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
 }
 
 .contact-form h3 {
   margin: 0 0 2rem 0;
-  color: #333;
+  color: var(--text-secondary);
   font-size: 1.5rem;
   font-weight: 600;
 }
@@ -945,7 +1004,7 @@ html {
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
-  color: #333;
+  color: var(--text-primary);
   font-weight: 500;
   font-size: 0.9rem;
 }
@@ -958,11 +1017,12 @@ html {
 .form-group textarea {
   width: 100%;
   padding: 1rem;
-  border: 2px solid #f0f0f0;
+  border: 2px solid rgba(236, 72, 153, 0.2);
   border-radius: 10px;
   font-size: 1rem;
   transition: all 0.3s ease;
-  background: #fafafa;
+  background: var(--section-bg);
+  color: var(--text-primary);
 }
 
 .form-group input:focus,
@@ -1313,7 +1373,7 @@ html {
 }
 
 .lightbox-caption {
-  color: #374151;
+  color: var(--text-primary);
   font-size: 1rem;
   line-height: 1.6;
   margin: 0;
