@@ -408,6 +408,7 @@ html {
   box-shadow: 0 8px 25px rgba(236, 72, 153, 0.3);
   transition: all 0.3s ease;
   cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .badge:hover {
@@ -1070,7 +1071,7 @@ html {
 }
 
 .cv-modal-content {
-  background: white;
+  background: var(--card-bg);
   border-radius: 20px;
   max-width: 800px;
   width: 100%;
@@ -1085,7 +1086,7 @@ html {
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 2rem;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid rgba(236, 72, 153, 0.2);
 }
 
 .cv-modal-header h3 {
@@ -1099,7 +1100,7 @@ html {
   background: none;
   border: none;
   font-size: 2rem;
-  color: #666;
+  color: var(--text-muted);
   cursor: pointer;
   transition: color 0.3s ease;
   width: 40px;
@@ -1130,7 +1131,7 @@ html {
   display: flex;
   gap: 1rem;
   padding: 1.5rem 2rem;
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid rgba(236, 72, 153, 0.2);
   justify-content: space-between;
 }
 
@@ -1143,7 +1144,7 @@ html {
 .footer {
   background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
   color: white;
-  padding: 4rem 0 2rem;
+  padding: 5rem 0 3rem;
   margin-top: 2rem;
 }
 
@@ -1315,7 +1316,7 @@ html {
   position: relative;
   max-width: 90vw;
   max-height: 90vh;
-  background: white;
+  background: var(--card-bg);
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
@@ -1356,7 +1357,7 @@ html {
 
 .lightbox-info {
   padding: 1.5rem;
-  background: white;
+  background: var(--card-bg);
 }
 
 .lightbox-category {
@@ -1772,7 +1773,7 @@ html {
 
 .lightbox-info {
   padding: 1.5rem;
-  background: white;
+  background: var(--card-bg);
 }
 
 .lightbox-category {
