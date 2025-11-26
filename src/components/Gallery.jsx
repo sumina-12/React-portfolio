@@ -1,4 +1,10 @@
 import { useState } from 'react'
+import img_1 from "../assets/img_1.jpg";
+import img_2 from "../assets/img_2.jpg";
+import img_3 from "../assets/img_3.jpg";
+import img_4 from "../assets/img_4.jpg";
+import img_5 from "../assets/img_5.jpg";
+import img_6 from "../assets/img_6.jpg";
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null)
@@ -6,37 +12,37 @@ export default function Gallery() {
 
   const galleryImages = [
     {
-      src: '/attached_assets/IMG-3d3ad4ef2a21f5794ae5b6ddb21c520b-V~2_1757076910840.jpg',
+      src: img_1,
       alt: 'Beautiful moment in pink saree',
       category: 'portraits',
       title: 'Elegance in Pink'
     },
     {
-      src: '/attached_assets/PXL_20250802_161841987_1757076910844.jpg',
+      src: img_2,
       alt: 'Cultural celebration with children',
       category: 'celebrations',
       title: 'Cultural Joy'
     },
     {
-      src: '/attached_assets/PXL_20250802_164540416_1757076910848.jpg',
+      src: img_3,
       alt: 'Birthday celebration with family',
       category: 'celebrations',
       title: 'Birthday Memories'
     },
     {
-      src: '/attached_assets/Snapchat-530487511_1757076910851.jpg',
+      src: img_4,
       alt: 'Evening portrait in traditional attire',
       category: 'portraits',
       title: 'Evening Grace'
     },
     {
-      src: '/attached_assets/IMG-42f65bcbbf7815b5610fae9a50aa40d8-V_1757076926794.jpg',
+      src: img_5,
       alt: 'Elegant setting with flowers',
       category: 'portraits',
       title: 'Floral Elegance'
     },
     {
-      src: '/attached_assets/IMG-9a746ba7be48417f820ce34c117c8cf8-V (1)_1757076926798.jpg',
+      src: img_6,
       alt: 'Street photography moment',
       category: 'lifestyle',
       title: 'Street Style'

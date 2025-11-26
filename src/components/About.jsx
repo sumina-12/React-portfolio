@@ -1,10 +1,12 @@
+import about from "../assets/about.jpg";
+
 export default function About() {
   return (
     <section id="about" className="section">
       <div className="container">
         <div className="about-content">
           <div className="about-image">
-            <img src="/attached_assets/20250612_134619_1756450641705.jpg" alt="Sumina Shrestha" className="profile-photo" />
+            <img src={about} alt="Sumina Shrestha" className="profile-photo" />
           </div>
           <div className="about-text">
             <h2 className="section-title">About Me</h2>
