@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import ThemeToggle from './ThemeToggle'
+import logo from "../assets/logo.jpg"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -45,7 +46,7 @@ export default function Header() {
     <nav className="navbar">
       <div className="nav-container">
         <div className="nav-logo">
-          <img src="/attached_assets/portfolio-logo_1757078956553.jpg" alt="Sumina Portfolio Logo" className="logo-image" />
+          <img src={logo} alt="Sumina Portfolio Logo" className="logo-image" />
           <span className="logo-text">Portfolio</span>
         </div>
         
